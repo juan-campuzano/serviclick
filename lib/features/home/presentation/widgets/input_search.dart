@@ -11,9 +11,7 @@ class InputSearch extends StatelessWidget {
         prefixIcon: Icon(Icons.search),
       ),
       cursorColor: Theme.of(context).colorScheme.primary,
-      onChanged: (value) {
-        // Aquí puedes manejar el cambio de texto
-      },
+      onChanged: (value) {},
     );
   }
 }
