@@ -48,6 +48,16 @@ class AppTheme {
         foregroundColor: Colors.black54,
       ),
     ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: Colors.indigo,
+      unselectedItemColor: Colors.grey,
+      selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+      unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
+      showUnselectedLabels: true,
+      elevation: 4,
+      type: BottomNavigationBarType.fixed,
+    ),
   );
 
   //TODO: falta definir el tema oscuro

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'widgets/input_search.dart';
 import '../../../core/extensions/widget_extensions.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ServicePage extends StatelessWidget {
+  const ServicePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,51 +70,33 @@ class HomePage extends StatelessWidget {
                   childAspectRatio: 3 / 4,
                 ),
                 itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: Image.network(
-                            'https://plus.unsplash.com/premium_photo-1684769161054-2fa9a998dcb6?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                            fit: BoxFit.cover,
+                  return GestureDetector(
+                    onTap: () {
+                      context.push('/services/details');
+                    },
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: const AspectRatio(
+                            aspectRatio: 1,
+                            child: Placeholder(),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Prueba',
-                        style: Theme.of(context).textTheme.bodyMedium,
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                        const SizedBox(height: 8),
+                        Text(
+                          'Prueba',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   );
                 },
               ),
             ],
           ).addSpacing(16.0),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Inicio',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favoritos',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Perfil',
-          ),
-        ],
-        currentIndex: 0,
-        onTap: (index) {
-          // Acción al seleccionar un elemento del menú
-        },
       ),
     );
   }

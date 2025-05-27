@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    context.go('/home');
+                    context.go('/services');
                   },
                   child: const Text('Iniciar sesión'),
                 ),
