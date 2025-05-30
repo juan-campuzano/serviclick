@@ -14,7 +14,7 @@ class AppShell extends StatefulWidget {
 class _AppShellState extends State<AppShell> {
   int _currentIndex = 0;
 
-  final tabs = ['/services', '/favorites', '/profile'];
+  final tabs = ['/services', '/notifications', '/profile'];
 
   void _onTap(int index) {
     setState(() => _currentIndex = index);

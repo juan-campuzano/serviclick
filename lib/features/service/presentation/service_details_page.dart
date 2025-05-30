@@ -83,22 +83,22 @@ class ServiceDetailsPage extends StatelessWidget {
 
           // Review 1
           reviewTile(
-            name: 'Olivia Bennett',
-            timeAgo: '2 weeks ago',
+            name: 'Penelope Sophia',
+            timeAgo: 'Hace 2 semanas',
             rating: 5,
             comment:
-                'Sophia was fantastic! She provided great insights and helped me visualize my dream home. Highly recommend!',
+                'El servicio fue excelente, el plomero llegó a tiempo y resolvió el problema rápidamente. Muy recomendable.',
             likes: 15,
             replies: 2,
           ),
 
           // Review 2
           reviewTile(
-            name: 'Ethan Harper',
-            timeAgo: '1 month ago',
+            name: 'Daniella Arteaga',
+            timeAgo: 'Hace un mes',
             rating: 4,
             comment:
-                'The consultation was helpful, but I felt it could have included more layout options.',
+                'Buen servicio, aunque el precio fue un poco alto. El plomero fue muy profesional y resolvió el problema.',
             likes: 8,
             replies: 1,
           ),

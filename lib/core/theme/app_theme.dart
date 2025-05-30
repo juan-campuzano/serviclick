@@ -20,7 +20,7 @@ class AppTheme {
     useMaterial3: true,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       titleTextStyle: GoogleFonts.plusJakartaSans().copyWith(
         fontSize: 20,

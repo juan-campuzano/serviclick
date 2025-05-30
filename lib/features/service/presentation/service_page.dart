@@ -10,12 +10,29 @@ class ServicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> services = [
-      'Servicio 1',
-      'Servicio 2',
-      'Servicio 3',
-      'Servicio 4',
-      'Servicio 5',
-      'Servicio 6',
+      'Plomería',
+      'Limpieza de hogar',
+      'Jardinería',
+      'Electricidad',
+      'Manualidades',
+      'Pintura',
+    ];
+    final featuredServices = [
+      {
+        'title': 'Diseño de interiores',
+        'subtitle': 'Transforma tu hogar',
+        'image': 'assets/images/1.png',
+      },
+      {
+        'title': 'Limpieza de hogar',
+        'subtitle': 'Deja tu hogar impecable',
+        'image': 'assets/images/2.png',
+      },
+      {
+        'title': 'Jardinería profesional',
+        'subtitle': 'Crea espacios únicos',
+        'image': 'assets/images/3.png',
+      },
     ];
     return Scaffold(
       appBar: AppBar(
@@ -25,9 +42,7 @@ class ServicePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart_outlined),
-            onPressed: () {
-              // Acción al presionar el botón de notificaciones
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -44,40 +59,41 @@ class ServicePage extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(
-                height: 210,
-                child: PageView.builder(
-                  itemCount: 3,
-                  controller: PageController(
-                    viewportFraction: 0.5,
-                  ),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(
-                            width: 200,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              elevation: 4,
-                              child: Image.asset(
-                                'assets/images/${index + 1}.png',
-                                fit: BoxFit.cover,
-                              ),
+              GestureDetector(
+                onTap: () {
+                  context.push('/services/details');
+                },
+                child: SizedBox(
+                  height: 150,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: featuredServices.length,
+                    separatorBuilder: (_, __) => const SizedBox(width: 12),
+                    itemBuilder: (context, index) {
+                      final item = featuredServices[index];
+                      return SizedBox(
+                        width: 160,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.asset(item['image']!,
+                                  height: 100, width: 160, fit: BoxFit.cover),
                             ),
-                          ),
-                          Text(
-                            'Servicios',
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          )
-                        ],
-                      ).addSpacing(8),
-                    );
-                  },
+                            const SizedBox(height: 4),
+                            Text(item['title']!,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold)),
+                            Text(item['subtitle']!,
+                                style: const TextStyle(fontSize: 12),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
               SizedBox(
@@ -107,7 +123,7 @@ class ServicePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      context.push('/services/details');
+                      context.push('/services/list');
                     },
                     child: Column(
                       children: [

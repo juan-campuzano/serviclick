@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Iniciar sesión',
+          'Bienvenido/a',
         ),
       ),
       body: Padding(
@@ -18,9 +18,9 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Placeholder(
-              fallbackHeight: 100,
-              fallbackWidth: 20,
+            Image.asset(
+              'assets/images/serviclick.png',
+              height: 200,
             ),
             const SizedBox(
               height: 24,

@@ -11,7 +11,7 @@ class ServiceRegistrationPage extends StatefulWidget {
 class _ServiceRegistrationPageState extends State<ServiceRegistrationPage> {
   final _formKey = GlobalKey<FormState>();
 
-  String? _selectedServiceType;
+  String? selectedServiceType;
   final _serviceTitleController = TextEditingController();
   final _descriptionController = TextEditingController();
   final _priceController = TextEditingController();
@@ -60,7 +60,7 @@ class _ServiceRegistrationPageState extends State<ServiceRegistrationPage> {
                         ))
                     .toList(),
                 onChanged: (value) =>
-                    setState(() => _selectedServiceType = value),
+                    setState(() => selectedServiceType = value),
                 validator: (value) => value == null
                     ? 'Por favor selecciona un tipo de servicio'
                     : null,

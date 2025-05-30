@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SchedulePage extends StatefulWidget {
   const SchedulePage({super.key});
@@ -85,9 +86,11 @@ class _SchedulePageState extends State<SchedulePage> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  // Acción al continuar
+                  context.go(
+                    '/services/booking-confirmed',
+                  );
                 },
-                child: const Text('Continuar'),
+                child: const Text('Confirmar'),
               ),
             ),
           )
