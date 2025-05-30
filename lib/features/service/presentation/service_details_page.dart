@@ -44,7 +44,7 @@ class ServiceDetailsPage extends StatelessWidget {
           const ListTile(
             contentPadding: EdgeInsets.zero,
             leading: CircleAvatar(
-              child: Text('S'),
+              child: Text('E'),
             ),
             title: Text('Eugenio Martínez'),
             subtitle: Text('5 años de experiencia'),
@@ -143,8 +143,8 @@ class ServiceDetailsPage extends StatelessWidget {
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
-            leading: const CircleAvatar(
-              child: Text('J'),
+            leading: CircleAvatar(
+              child: Text(name.split(' ').first[0]),
             ),
             title: Text(name),
             subtitle: Text(timeAgo),

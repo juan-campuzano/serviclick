@@ -62,19 +62,6 @@ class BookingConfirmedPage extends StatelessWidget {
 
             const Spacer(),
 
-            // Botón Ver Detalles
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size.fromHeight(50),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32)),
-              ),
-              child: const Text(
-                'Ver detalles de la reserva',
-              ),
-            ),
-
             const SizedBox(height: 12),
 
             OutlinedButton(
