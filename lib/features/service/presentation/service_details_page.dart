@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ServiceDetailsPage extends StatelessWidget {
   const ServiceDetailsPage({super.key});
@@ -7,7 +8,9 @@ class ServiceDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Service Details'),
+        title: const Text(
+          'Servicio de plomería',
+        ),
         centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
@@ -18,34 +21,36 @@ class ServiceDetailsPage extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            child: const Placeholder(
-              fallbackHeight: 100,
+            child: Image.asset(
+              'assets/images/categories/1.png',
+              height: 250,
             ),
           ),
           const SizedBox(height: 16),
-
           const Text(
-            'Interior Design Consultation',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            'Get expert advice on transforming your living space with our interior design consultation service. We\'ll help you create a home that reflects your style and meets your needs.',
+            'Obtén el mejor servicio de plomería de la ciudad. Nuestros expertos están listos para ayudarte con cualquier problema de fontanería que tengas.',
             style: TextStyle(color: Colors.black87),
           ),
           const SizedBox(height: 24),
+          ElevatedButton(
+            onPressed: () {
+              // Navigate to booking page
+              context.push('/services/details/book');
+            },
+            child: const Text('Reserva ahora'),
+          ),
 
-          const SectionTitle('About the Service Provider'),
+          const SectionTitle('Acerca del proveedor'),
           const ListTile(
             contentPadding: EdgeInsets.zero,
             leading: CircleAvatar(
               child: Text('S'),
             ),
-            title: Text('Sophia Carter'),
-            subtitle: Text('5 years of experience'),
+            title: Text('Eugenio Martínez'),
+            subtitle: Text('5 años de experiencia'),
           ),
 
-          const SectionTitle('Pricing'),
+          const SectionTitle('Precio'),
           ListTile(
             contentPadding: EdgeInsets.zero,
             leading: Container(
@@ -56,16 +61,16 @@ class ServiceDetailsPage extends StatelessWidget {
               ),
               child: const Icon(Icons.attach_money),
             ),
-            title: const Text('Consultation Fee'),
-            subtitle: const Text('Starting from \$150'),
+            title: const Text('Rango de precios'),
+            subtitle: const Text('Comenzando desde \$150.000'),
           ),
 
-          const SectionTitle('Reviews'),
+          const SectionTitle('Reseñas'),
           const Text(
             '4.8',
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
-          const Text('125 reviews'),
+          const Text('125 reseñas'),
           const SizedBox(height: 12),
 
           // Rating Bars (mocked)

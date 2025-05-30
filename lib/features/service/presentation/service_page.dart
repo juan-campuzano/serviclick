@@ -9,6 +9,14 @@ class ServicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> services = [
+      'Servicio 1',
+      'Servicio 2',
+      'Servicio 3',
+      'Servicio 4',
+      'Servicio 5',
+      'Servicio 6',
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -37,21 +45,48 @@ class ServicePage extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(
-                height: 200,
+                height: 210,
                 child: PageView.builder(
-                  itemCount: 5,
+                  itemCount: 3,
                   controller: PageController(
-                    viewportFraction: 0.8,
+                    viewportFraction: 0.5,
                   ),
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: Card(
-                        elevation: 4,
-                        child: Center(child: Text('Item $index')),
-                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(
+                            width: 200,
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              elevation: 4,
+                              child: Image.asset(
+                                'assets/images/${index + 1}.png',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Servicios',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          )
+                        ],
+                      ).addSpacing(8),
                     );
                   },
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    context.push('/services/register');
+                  },
+                  child: const Text('Lista tus servicios'),
                 ),
               ),
               Text(
@@ -65,7 +100,7 @@ class ServicePage extends StatelessWidget {
                 itemCount: 6,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 16,
+                  mainAxisSpacing: 10,
                   crossAxisSpacing: 16,
                   childAspectRatio: 3 / 4,
                 ),
@@ -78,14 +113,16 @@ class ServicePage extends StatelessWidget {
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(16),
-                          child: const AspectRatio(
-                            aspectRatio: 1,
-                            child: Placeholder(),
+                          child: Image.asset(
+                            'assets/images/categories/${index + 1}.png',
+                            fit: BoxFit.cover,
+                            height: 150,
+                            width: double.infinity,
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'Prueba',
+                          services[index],
                           style: Theme.of(context).textTheme.bodyMedium,
                           textAlign: TextAlign.center,
                         ),

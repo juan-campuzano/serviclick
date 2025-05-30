@@ -45,7 +45,7 @@ class AppTheme {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         textStyle: const TextStyle(fontWeight: FontWeight.w600),
-        foregroundColor: Colors.black54,
+        foregroundColor: Colors.white,
       ),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

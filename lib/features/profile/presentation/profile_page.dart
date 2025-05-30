@@ -8,7 +8,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF1F4F9),
       appBar: AppBar(
-        title: const Text('Account'),
+        title: const Text('Tu cuenta'),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
@@ -31,35 +31,34 @@ class ProfilePage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Sophia Carter',
+                'Juan Campuzano',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 4),
               const Text(
-                'Joined in 2021',
+                'Se unió en 2021',
                 style: TextStyle(color: Colors.grey),
               ),
               const Text(
-                '4.9 • 12 reviews',
+                '4.9 • 12 reseña',
                 style: TextStyle(color: Colors.blueGrey),
               ),
               const SizedBox(height: 32),
 
               // Sección de "Manage"
-              sectionTitle('Manage'),
-              profileItem(Icons.person_outline, 'Personal information'),
-              profileItem(Icons.credit_card, 'Payment methods'),
-              profileItem(Icons.notifications_none, 'Notifications'),
-              profileItem(Icons.shield_outlined, 'Security'),
+              sectionTitle('Administrar'),
+              profileItem(Icons.person_outline, 'Información personal'),
+              profileItem(Icons.credit_card, 'Métodos de pago'),
+              profileItem(Icons.notifications_none, 'Notificaciones'),
+              profileItem(Icons.shield_outlined, 'Seguridad'),
 
               const SizedBox(height: 24),
 
-              // Sección de "Support"
-              sectionTitle('Support'),
-              profileItem(Icons.help_outline, 'Help Center'),
-              profileItem(Icons.chat_bubble_outline, 'Contact us'),
-              profileItem(Icons.description_outlined, 'Terms of service'),
-              profileItem(Icons.logout, 'Log out'),
+              sectionTitle('Soporte'),
+              profileItem(Icons.help_outline, 'Centro de ayuda'),
+              profileItem(Icons.chat_bubble_outline, 'Contáctanos'),
+              profileItem(Icons.description_outlined, 'Términos de servicio'),
+              profileItem(Icons.logout, 'Cerrar sesión'),
             ],
           ),
         ),
