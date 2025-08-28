@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:serviclick/app.dart';
+import 'package:clarity_flutter/clarity_flutter.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,5 +17,14 @@ void main() {
     ),
   );
 
-  runApp(const App());
+  final config = ClarityConfig(
+      projectId: "s2iv5lwvts",
+      logLevel: LogLevel
+          .Verbose // Note: Use "LogLevel.Verbose" value while testing to debug initialization issues.
+      );
+
+  runApp(ClarityWidget(
+    app: const App(),
+    clarityConfig: config,
+  ));
 }
